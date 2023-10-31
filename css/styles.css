@@ -1,0 +1,115 @@
+
+html {
+    box-sizing: border-box;
+   
+}
+
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+
+@media (max-width: 725px) {
+    main{
+        display: none;
+        opacity: 1;
+        transition: opacity 2s, display 2s;
+    }
+    body {
+      
+      font-size: 16px;
+      font-family:  Montserrat;
+      display: flex;
+      justify-content: center;  
+      font-weight: 300;
+      line-height: normal;
+    }
+    .first__page__logo{
+       
+        background-color: rgba(217, 217, 217, 0.30);
+        display: flex;
+        justify-content: center;    
+        height: 100vh; 
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+        opacity: 1;
+        transition: opacity 1s;
+       
+        
+        
+    }
+    .logo__img,
+    .logo__text {
+      opacity: 0; /* Начальное значение - элементы невидимы */
+    }
+    .logo__text{
+  
+        font-size: 32px;
+        line-height: normal;
+        text-align: center;
+        width: 242px;
+        font-family: 'Nanum Gothic Coding', monospace;
+        height: 78px;
+        /* animation: fadeInText 2s ease forwards; */
+        animation-delay: 1.5s; /* Задержка в полсекунды после анимации изображения */
+        animation: textAnimation 2s ease-in-out;
+    }
+    .hidden{
+        opacity: 0;
+    }
+    .unhidden{
+        opacity: 1;
+        display: block;
+    }
+  
+      
+    .logo__img{
+        width: 350px;
+        height: 350px;
+        margin-top: -80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 30px;
+        animation: logoAnimation 2s ease-in-out;
+    }
+   
+
+  
+
+    @keyframes logoAnimation {
+        0% {
+            opacity: 0;
+            transform: rotateY(0deg);
+          }
+          100% {
+            opacity: 1; /* Устанавливаем полную непрозрачность */
+            transform: rotateY(360deg); /* Вращаем в 3D вокруг оси X на 360 градусов */ 
+
+
+       
+        
+        }
+      }
+      
+      /* Применяем анимацию к элементу .logo__img */
+     
+      /* Анимация для текста */
+      @keyframes textAnimation {
+        0% {
+            opacity: 0; /* Начальная непрозрачность (текст скрыт) */
+          }
+          100% {
+            opacity: 1; /* Завершаем анимацию с полной непрозрачностью (текст видим) */
+          }
+      }
+      .img__2{
+        width: 100vw;
+        height: 100vh;
+      }
+}
